@@ -1,0 +1,28 @@
+<div class="bg">
+<button (click)= "initNewHero()" class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3"> Create new hero</button>
+
+<table class="grid justify-items-center" >
+<thead >
+    <th class="rounded-full">Name</th>
+    <th class="rounded-full">First Name</th>
+    <th class="rounded-full">Last Name</th>
+    <th class="rounded-full">Place </th>  
+    <th></th> 
+</thead>
+
+<tbody>
+    <tr *ngFor="let hero of heroes" class="py-4" class=" h-14 bg-gradient-to-r from-cyan-500 to-blue-500 ">
+        <th class="py-4">{{hero.name}}</th>
+        <th>{{hero.firstName}}</th>
+        <th>{{hero.lastName}}</th>
+        <th>{{hero.place}}</th>
+        <td><button (click)="editHero(hero)" class="rounded-full h-14 bg-gradient-to-r from-sky-500 to-indigo-100">Edit</button></td>
+    </tr>
+</tbody>
+
+</table>
+
+<app-edit-hero [hero]="heroToEdit"
+ (heroesUpdated)="updateHeroList($event)" ></app-edit-hero>  
+
+</div>

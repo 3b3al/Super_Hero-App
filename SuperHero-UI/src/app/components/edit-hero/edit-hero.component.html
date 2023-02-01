@@ -1,0 +1,28 @@
+<div *ngIf = "hero" calss="bg">
+    <h2> {{ hero.name }} </h2>
+    <div >
+        Name:
+        <input [(ngModel)]= "hero.name" placeholder = " name"   class="rounded-full bg-cyan-700" >
+    </div>
+
+    <div>
+        First Name:
+        <input [(ngModel)]= "hero.firstName" placeholder = " first name"  class="rounded-full bg-cyan-700" >
+    </div>
+
+    <div>
+        Last Name:
+        <input [(ngModel)]= "hero.lastName" placeholder = " last name"  class="rounded-full bg-cyan-700"  >
+    </div>
+
+    <div>
+        Place:
+        <input [(ngModel)]= "hero.place" placeholder = " place"   class="rounded-full bg-cyan-700" >
+    </div>
+
+ 
+    <button (click)="updateHero(hero)" *ngIf="hero.id" class="rounded-full text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800"> save </button>
+    <button (click)="deleteHero(hero)" *ngIf="hero.id" class="rounded-full text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800"> delete </button>
+    <button (click)="createHero(hero)" *ngIf="!hero.id" class="rounded-full text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800"> add </button>
+
+</div > 
